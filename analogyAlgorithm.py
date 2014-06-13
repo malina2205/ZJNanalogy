@@ -3,7 +3,10 @@
 import sys
 import codecs
 from optparse import OptionParser
+import warnings
 import os
+
+
 
 #czyta leksykon z pliku
 def read_lexicon(file_name):
@@ -55,7 +58,8 @@ def is_in_lexicon(w,W):
         if x[0] == w:
             return x
     return False
-
+    
+warnings.filterwarnings("ignore")
 #dodaje wpis w do tablicy D, jeśli jeszcze go tam nie ma
 def addBaseWord(w,D):
     if w in D:
